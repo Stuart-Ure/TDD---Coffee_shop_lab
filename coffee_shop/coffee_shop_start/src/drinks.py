@@ -1,4 +1,0 @@
-
-class Drinks:
-
-    pass
