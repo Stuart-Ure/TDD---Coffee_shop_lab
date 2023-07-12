@@ -1,19 +1,21 @@
 # from coffee_shop import CoffeeShop
-
 class Customer:
     
-    def __init__(self,name,wallet):
+    def __init__(self, name, wallet, age):
         self.name = name
         self.wallet = wallet
-        # self.age = 0
-        # self.energy = 0
+        self.age= age
+
     
-    def reduce_wallet(self,amount):
+    def reduce_wallet(self, amount):
         self.wallet -= amount
-        return amount
     
-    def buy_drink(self):
-        pass
+    def buy_drink(self, drink):
+        if self.wallet >= drink.price:
+            self.reduce_wallet(drink.price)
+            return True
+        else:
+            return False
 
 
-    
+

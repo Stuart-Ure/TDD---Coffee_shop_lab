@@ -5,9 +5,9 @@ from src.drink import Drink
 
 class TestCustomer(unittest.TestCase):
     def setUp(self):
-        self.geo = Customer("George",200)
+        self.geo = Customer("George",200, 30)
         self.coffee_shop = CoffeeShop("S&G",1000)
-        self.drink= Drink("Coffee", 10)
+        self.drink= Drink("Flat White", 4)
 
 
     
@@ -17,9 +17,12 @@ class TestCustomer(unittest.TestCase):
     def test_wallet_amount(self):
         self.assertEqual(200,self.geo.wallet)
 
-    def test_reduce_wallet_ammout(self):
+    def test_reduce_wallet_amount(self):
         self.geo.reduce_wallet(20)
         self.assertEqual(180,self.geo.wallet)
 
-    def buy_drink(self):
-        self.assertEqual(self.drink.name,"Coff")
+    def test_buy_drink(self):
+        drink = Drink("Flat White", 4)
+        self.assertTrue(self.geo.buy_drink(drink))
+        self.assertEqual(196, self.geo.wallet)
+    

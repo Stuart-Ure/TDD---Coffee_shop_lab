@@ -14,10 +14,6 @@ class CoffeeShop:
 			self.till += drink.price
 	
 
-		
-	
-	def whatever(self):
-		print(self.drink_list)
 	
 
 
